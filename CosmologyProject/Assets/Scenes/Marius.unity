@@ -5013,11 +5013,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 14f42ca9642ef4ba6b5dd62217cafe67, type: 2}
     - target: {fileID: -4292154010595695564, guid: be6887b051b9e435bb45d9ce773c9e08, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0436195
+      value: 0.043980718
       objectReference: {fileID: 0}
     - target: {fileID: -4292154010595695564, guid: be6887b051b9e435bb45d9ce773c9e08, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.99904823
+      value: 0.9990324
       objectReference: {fileID: 0}
     - target: {fileID: -4292154010595695564, guid: be6887b051b9e435bb45d9ce773c9e08, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10456,6 +10456,10 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: e6d66a7733a97454a977baf649a96c70, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e6d66a7733a97454a977baf649a96c70, type: 3}
       propertyPath: m_Name
       value: jupiter
@@ -10464,7 +10468,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6722085885383957590, guid: e6d66a7733a97454a977baf649a96c70, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6d66a7733a97454a977baf649a96c70, type: 3}
 --- !u!1001 &1502371052
 PrefabInstance:
