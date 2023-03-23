@@ -12,6 +12,7 @@ public class RingRotation : MonoBehaviour
     {
         transform.localEulerAngles = new Vector3(50, -65, -66);
         transform.Rotate(Vector3.down * rotationSpeed * Time.deltaTime);
-        
+        transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+
     }
 }
