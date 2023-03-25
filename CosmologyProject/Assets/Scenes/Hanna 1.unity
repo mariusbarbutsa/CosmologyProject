@@ -158,8 +158,7 @@ Transform:
   - {fileID: 2137607883}
   - {fileID: 1321375430}
   - {fileID: 1209096742}
-  - {fileID: 714036033}
-  - {fileID: 770207964}
+  - {fileID: 783820093}
   - {fileID: 1276839396}
   - {fileID: 616741645}
   m_Father: {fileID: 0}
@@ -5332,6 +5331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sun
       objectReference: {fileID: 0}
+    - target: {fileID: 7889444040610921030, guid: 1f6a37eddee1043fdada7e9cbaab3ccc, type: 3}
+      propertyPath: m_TagString
+      value: Sun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6a37eddee1043fdada7e9cbaab3ccc, type: 3}
 --- !u!1 &438284232 stripped
@@ -5518,7 +5521,7 @@ Transform:
   m_Children:
   - {fileID: 1823792307}
   m_Father: {fileID: 32695227}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &635890101
 GameObject:
@@ -5628,6 +5631,7 @@ GameObject:
   - component: {fileID: 701220856}
   - component: {fileID: 701220857}
   - component: {fileID: 701220858}
+  - component: {fileID: 701220859}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Mars
@@ -5643,7 +5647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701220855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.9, y: 0, z: 0}
+  m_LocalPosition: {x: -44.22, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5663,6 +5667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91cc046e953d47aabb1f886d3d3d307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
 --- !u!65 &701220858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5674,8 +5679,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.4555016, y: 6.954533, z: 0.99999875}
-  m_Center: {x: -43.551105, y: -0.20997722, z: 0.00000064571697}
+  m_Size: {x: 8, y: 8, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &701220859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701220855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50799d83498948eba11505f7b269def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.01
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5783,7 +5801,7 @@ GameObject:
   - component: {fileID: 714036031}
   m_Layer: 0
   m_Name: Sun Particle system
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10575,13 +10593,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714036030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -110.50001, y: 1.2999998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2999997, y: 2.2999997, z: 2.2999997}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 70707404}
-  m_Father: {fileID: 32695227}
-  m_RootOrder: 6
+  m_Father: {fileID: 783820093}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770207963
 GameObject:
@@ -10607,14 +10625,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770207963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -110.50001, y: 1.2999998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 93329211}
   - {fileID: 705507995}
-  m_Father: {fileID: 32695227}
-  m_RootOrder: 7
+  m_Father: {fileID: 783820093}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773888672 stripped
 GameObject:
@@ -10640,6 +10658,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b93c56b4c98164336bfb9799aa5ead36, type: 3}
   m_PrefabInstance: {fileID: 1995917295}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &783820092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783820093}
+  m_Layer: 0
+  m_Name: Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783820093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783820092}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -110.50001, y: 1.2999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 714036033}
+  - {fileID: 770207964}
+  m_Father: {fileID: 32695227}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806267443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: be6887b051b9e435bb45d9ce773c9e08, type: 3}
@@ -11065,7 +11116,7 @@ Transform:
   m_Children:
   - {fileID: 165446232}
   m_Father: {fileID: 32695227}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1321375429
 GameObject:
@@ -11406,7 +11457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9156be14d53a74fbc85d6ad885e23575, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9156be14d53a74fbc85d6ad885e23575, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11414,7 +11465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9156be14d53a74fbc85d6ad885e23575, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3049278
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9156be14d53a74fbc85d6ad885e23575, type: 3}
       propertyPath: m_LocalRotation.w

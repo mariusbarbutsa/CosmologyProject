@@ -12,6 +12,7 @@ TagManager:
   - Saturn
   - Uranus
   - Neptune
+  - Sun
   layers:
   - Default
   - TransparentFX
