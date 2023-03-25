@@ -1,14 +1,23 @@
 {
-    "name": "InputControls",
+    "name": "TouchControls",
     "maps": [
         {
-            "name": "Touch",
+            "name": "Controls",
             "id": "0aa2e094-e376-42f9-b838-28b566dd9462",
             "actions": [
                 {
                     "name": "TapOnPlanet",
                     "type": "Value",
                     "id": "cc95bb2d-ba7c-4c50-9da7-d1e40b27946a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PressA",
+                    "type": "Value",
+                    "id": "d6a15f78-b7dd-459a-a69b-270842d1a5af",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -35,6 +44,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TapOnPlanet",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b8c9d10-16d4-4d16-bc0c-5540c90585ac",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Venus
+  - Mars
+  - Earth
+  - Mercury
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
   layers:
   - Default
   - TransparentFX
