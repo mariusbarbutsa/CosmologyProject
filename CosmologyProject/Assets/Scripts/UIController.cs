@@ -7,6 +7,13 @@ public class UIController : MonoBehaviour
 {
 
     public Slider _musicSlider, _sfxSlider;
+    public Sprite musicOff;
+    public Sprite musicOn;
+    public GameObject musicIcon;
+    public Sprite soundOff;
+    public Sprite soundOn;
+    public GameObject soundIcon;
+
 
     public void ToggleMusic()
     {
@@ -29,5 +36,34 @@ public class UIController : MonoBehaviour
     {
         AudioManager.Instance.SFXVolume(_sfxSlider.value);
     }
+
+    public void changeMusicSprite()
+    {
+        if (musicIcon.GetComponent<Image>().sprite == musicOn)
+        {
+            // getting Image component of musicIcon and changing it
+            musicIcon.GetComponent<Image>().sprite = musicOff;
+            Debug.Log("Debugging this");
+        }
+        else
+        {
+            musicIcon.GetComponent<Image>().sprite = musicOn;
+        }
+
+    }
+
+    public void changeSoundSprite()
+    {
+        if (soundIcon.GetComponent<Image>().sprite == soundOn)
+        {
+            // getting Image component of soundIcon and changing it
+            soundIcon.GetComponent<Image>().sprite = soundOff;
+        }
+        else
+        {
+            soundIcon.GetComponent<Image>().sprite = soundOn;
+        }
+    }
+
 
 }
