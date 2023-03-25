@@ -21,6 +21,10 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         if (state == PlanetState.Mars)
         {
             Debug.Log("mars");
+            if (tag.Equals("Mars") == false)
+            {
+                gameObject.SetActive(false);
+            }
 
             /* GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Earth");
             foreach (GameObject tagged in taggedObjects)
@@ -28,11 +32,11 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
                 tagged.SetActive(false);
             }
             */
-            /*while (tag.Equals("Mars") == false)
-            {
-                gameObject.SetActive(false);
-            }
-            */
+                /*while (tag.Equals("Mars") == false)
+                {
+                    gameObject.SetActive(false);
+                }
+                */
         }
     }
 
