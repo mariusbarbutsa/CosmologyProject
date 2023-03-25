@@ -20,8 +20,13 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     {
         if (state == PlanetState.Mars)
         {
-            Debug.Log("mars");
-            if (tag.Equals("Mars") == false)
+            
+            if (tag.Equals("Mars") )
+            {
+                Debug.Log("mars");
+
+            }
+            else
             {
                 gameObject.SetActive(false);
             }
