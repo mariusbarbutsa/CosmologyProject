@@ -41,7 +41,7 @@ public class ChangeVisibility : MonoBehaviour
 
         if (GameManager.Instance.activePlanet != PlanetTag.None)
         {
-            Debug.Log("miniplanets are visible");
+            Debug.Log("MiniPlanets are visible");
             miniPlanets.SetActive(false);
         }
     }
