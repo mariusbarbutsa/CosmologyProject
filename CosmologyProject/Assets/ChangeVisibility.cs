@@ -6,12 +6,18 @@ public class ChangeVisibility : MonoBehaviour
 {
 
     public GameObject miniPlanets;
-
-
+    public PlanetTag planetTag;
 
     void Awake()
     {
-        GameManager.Instance.planetChange += ChangeVisibilityPlanets;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.planetChange += ChangeVisibilityPlanets;
+        }
+        else
+        {
+            Debug.LogError("GameManager.Instance is null");
+        }
     }
 
     void OnDestroy()
@@ -21,17 +27,22 @@ public class ChangeVisibility : MonoBehaviour
 
     void OnEnable()
     {
-
+        //GameManager.Instance.planetChange += ChangeVisibilityPlanets;
     }
 
     void OnDisable()
     {
-        GameManager.Instance.planetChange += ChangeVisibilityPlanets;
+        //GameManager.Instance.planetChange += ChangeVisibilityPlanets;
     }
 
     private void ChangeVisibilityPlanets()
     {
-        Debug.Log("noppeeee!");
-        miniPlanets.SetActive(true);
+        Debug.Log("the method works");
+
+        if (GameManager.Instance.activePlanet != PlanetTag.None)
+        {
+            Debug.Log("miniplanets are visible");
+            miniPlanets.SetActive(false);
+        }
     }
 }

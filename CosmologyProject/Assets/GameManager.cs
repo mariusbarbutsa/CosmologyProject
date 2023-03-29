@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PlanetTag activePlanet = PlanetTag.None;
+    public PlanetTag activePlanet = PlanetTag.None;
 
     public delegate void PlanetChange();
     public PlanetChange planetChange;

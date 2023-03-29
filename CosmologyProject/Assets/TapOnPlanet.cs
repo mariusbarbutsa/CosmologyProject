@@ -16,6 +16,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public Transform transformList;
     public GameObject miniPlanets;
 
+
     // The animation curve to use for the scale animation
     public AnimationCurve animationCurve;
 
@@ -93,14 +94,20 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
             ScaleAndChangePosition(scaleSize, xPosition, yPosition);
         }
 
-
-
     }
+
 
 
     void Awake()
     {
-        GameManager.Instance.planetChange += PrintStuff;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.planetChange += PrintStuff;
+        }
+        else
+        {
+            Debug.LogError("GameManager.Instance is null");
+        }
     }
 
     void OnDestroy()
@@ -121,7 +128,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     private void PrintStuff()
     {
         Debug.Log("Awesomeness!");
-        miniPlanets.SetActive(true);
+        //miniPlanets.SetActive(true);
     }
 
 }
