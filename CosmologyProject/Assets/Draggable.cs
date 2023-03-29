@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
+    public GameObject snapObject;
     private bool isDragging;
     private Vector3 offset;
     private float zCoord;
+    private float snapDistance = 30f;
 
     private void Update()
     {
@@ -22,10 +24,18 @@ public class Draggable : MonoBehaviour
             else if (touch.phase == TouchPhase.Moved && isDragging)
             {
                 transform.position = Camera.main.ScreenToWorldPoint(touchPos) + offset;
+                if (Vector3.Distance(transform.position, snapObject.transform.position) <= snapDistance)
+                {
+                    transform.position = snapObject.transform.position;
+                }
             }
             else if (touch.phase == TouchPhase.Ended && isDragging)
             {
                 isDragging = false;
+                if (Vector3.Distance(transform.position, snapObject.transform.position) <= snapDistance)
+                {
+                    transform.position = snapObject.transform.position;
+                }
             }
         }
     }
