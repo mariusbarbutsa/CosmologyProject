@@ -5,15 +5,15 @@ public class Draggable : MonoBehaviour
     public GameObject snapObject;
     private bool isDragging;
     private Vector3 offset;
-    private float zCoord;
-    private float snapDistance = 30f;
+    private float zCoord = 0f;
+    public float snapDistance = 5f;
 
     private void Update()
     {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, zCoord);
+            Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0); // set z to 0
 
             if (touch.phase == TouchPhase.Began)
             {

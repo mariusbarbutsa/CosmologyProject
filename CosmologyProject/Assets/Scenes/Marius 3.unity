@@ -2102,9 +2102,10 @@ GameObject:
   - component: {fileID: 456340082}
   - component: {fileID: 456340081}
   - component: {fileID: 456340080}
+  - component: {fileID: 456340084}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2117,11 +2118,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456340079}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.1345367
+  m_Center: {x: 0, y: 0, z: 1.6345376}
 --- !u!23 &456340081
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2142,7 +2143,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9c26103c7e3a3481ca34db7e45f94a5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2187,6 +2188,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456340084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456340079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d89391a5cc94bae8ee6bc321f94fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &459911211
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,7 +6450,7 @@ GameObject:
   - component: {fileID: 1723304911}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6513,7 +6526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723304906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.7, y: 1.9, z: 0}
+  m_LocalPosition: {x: 98.1, y: 15.8, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6533,6 +6546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapObject: {fileID: 456340079}
+  snapDistance: 3
 --- !u!1 &1766478526
 GameObject:
   m_ObjectHideFlags: 0
