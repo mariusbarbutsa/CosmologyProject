@@ -6,9 +6,11 @@ public class ChangeVisibility : MonoBehaviour
 {
 
     public GameObject miniPlanets;
+    public GameObject uiContent01;
     public PlanetTag planetTag;
+    public float fadeInTime = 2f;
 
-    void Awake()
+    void Start()
     {
         if (GameManager.Instance != null)
         {
@@ -25,16 +27,6 @@ public class ChangeVisibility : MonoBehaviour
         GameManager.Instance.planetChange -= ChangeVisibilityPlanets;
     }
 
-    void OnEnable()
-    {
-        //GameManager.Instance.planetChange += ChangeVisibilityPlanets;
-    }
-
-    void OnDisable()
-    {
-        //GameManager.Instance.planetChange += ChangeVisibilityPlanets;
-    }
-
     private void ChangeVisibilityPlanets()
     {
         Debug.Log("the method works");
@@ -43,6 +35,15 @@ public class ChangeVisibility : MonoBehaviour
         {
             Debug.Log("MiniPlanets are visible");
             miniPlanets.SetActive(true);
+            uiContent01.SetActive(true);
+        }
+        else
+        {
+            miniPlanets.SetActive(false);
+            uiContent01.SetActive(false);
         }
     }
+
+
+
 }

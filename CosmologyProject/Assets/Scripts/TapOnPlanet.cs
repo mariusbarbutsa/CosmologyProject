@@ -95,7 +95,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("clicked");
 
-        GameManager.Instance.ChangePlanet(planetTag);
+        //GameManager.Instance.ChangePlanet(planetTag);
 
         for (int i = 0; i < transformList.childCount; i++)
         {
@@ -115,12 +115,15 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
         if (!executed)
         {
+            GameManager.Instance.ChangePlanet(planetTag);
             ScaleAndChangePosition(scaleSize, xPosition, yPosition);
             executed = true;
 
         }
         else
         {
+            //GameManager.Instance.ChangePlanet(planetTag);
+
             ResetSizes();
             executed = false;
 

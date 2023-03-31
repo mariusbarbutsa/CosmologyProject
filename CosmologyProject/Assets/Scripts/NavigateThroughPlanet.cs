@@ -15,11 +15,14 @@ public class NavigateThroughPlanet : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.planetChange += MakeActiveBigger;
+            Debug.Log("My name is: " + gameObject.name);
         }
         else
         {
             Debug.LogError("GameManager.Instance is null");
         }
+
+        originalScale = transform.localScale;
     }
 
     void OnDestroy()
@@ -29,7 +32,7 @@ public class NavigateThroughPlanet : MonoBehaviour
 
     void OnEnable()
     {
-
+        MakeActiveBigger();
     }
 
     void OnDisable()
@@ -41,23 +44,20 @@ public class NavigateThroughPlanet : MonoBehaviour
     {
         Debug.Log("navigate works");
 
-        for (int i = 0; i < transformList.childCount; i++)
+        if (planetTag == GameManager.Instance.activePlanet)
         {
-            if (transformList.GetChild(i).CompareTag(GameManager.Instance.activePlanet.ToString()))
-            {
-                ScaleAndChangePosition(scaleSize);
-            }
-
-
+            ScaleAndChangePosition(scaleSize);
         }
     }
 
     public void ScaleAndChangePosition(float scaleSize)
     {
+        transform.localScale = originalScale + Vector3.one * scaleSize;
+    }
 
-        Vector3 currentScale = transform.localScale;
-        Vector3 targetScale = currentScale + Vector3.one * scaleSize;
-        transform.localScale = targetScale;
+    public void ResetScaleAndChangePosition()
+    {
+        transform.localScale = originalScale;
     }
 
 }
