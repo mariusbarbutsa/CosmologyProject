@@ -27,6 +27,14 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         originalPosition = transform.position;
         originalRotation = transform.rotation;
         originalScale = transform.localScale;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.planetChange += PrintStuff;
+        }
+        else
+        {
+            Debug.LogError("GameManager.Instance is null");
+        }
     }
 
     public void ResetSizes()
@@ -86,10 +94,12 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
+
         GameManager.Instance.ChangePlanet(planetTag);
 
         for (int i = 0; i < transformList.childCount; i++)
         {
+
             if (transformList.GetChild(i).CompareTag(planetTag.ToString()))
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
@@ -107,6 +117,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         {
             ScaleAndChangePosition(scaleSize, xPosition, yPosition);
             executed = true;
+
         }
         else
         {
@@ -122,18 +133,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     }
 
 
-
-    void Awake()
-    {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.planetChange += PrintStuff;
-        }
-        else
-        {
-            Debug.LogError("GameManager.Instance is null");
-        }
-    }
 
     void OnDestroy()
     {
