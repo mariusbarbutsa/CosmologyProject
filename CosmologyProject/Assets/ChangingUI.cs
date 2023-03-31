@@ -9,6 +9,8 @@ public class ChangingUI : MonoBehaviour
     public Canvas mainMenu;
     public Canvas difficultyScene;
     public Canvas quizEasyScreen;
+    public Canvas resultsScreen;
+    public GameObject question1;
 
 
 
@@ -28,6 +30,7 @@ public class ChangingUI : MonoBehaviour
     {
         quizEasyScreen.gameObject.SetActive(true);
         difficultyScene.gameObject.SetActive(false);
+        question1.gameObject.SetActive(true);
     }
 
     public void QuitQuiz()
