@@ -6,20 +6,11 @@ using UnityEngine;
 public class NavigateThroughPlanet : MonoBehaviour
 {
     public PlanetTag planetTag;
-    public float animationDuration = 1.0f;
     public float scaleSize;
-    public float xPosition;
-    public float yPosition;
-    TapOnPlanet TapOnPlanet = new TapOnPlanet();
+    private Vector3 originalScale;
     public Transform transformList;
 
-
     void Start()
-    {
-
-    }
-
-    void Awake()
     {
         if (GameManager.Instance != null)
         {
@@ -54,10 +45,19 @@ public class NavigateThroughPlanet : MonoBehaviour
         {
             if (transformList.GetChild(i).CompareTag(GameManager.Instance.activePlanet.ToString()))
             {
-                TapOnPlanet.ScaleAndChangePosition(scaleSize, xPosition, yPosition);
+                ScaleAndChangePosition(scaleSize);
             }
 
 
         }
     }
+
+    public void ScaleAndChangePosition(float scaleSize)
+    {
+
+        Vector3 currentScale = transform.localScale;
+        Vector3 targetScale = currentScale + Vector3.one * scaleSize;
+        transform.localScale = targetScale;
+    }
+
 }
