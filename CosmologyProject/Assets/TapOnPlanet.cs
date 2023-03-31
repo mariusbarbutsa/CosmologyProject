@@ -15,10 +15,24 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public PlanetTag planetTag;
     public Transform transformList;
     public GameObject miniPlanets;
-
-
-    // The animation curve to use for the scale animation
+    private bool executed = false;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+    private Vector3 originalScale;
     public AnimationCurve animationCurve;
+
+    void Start()
+    {
+        // Store the object's original transform values when the object is created or loaded
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+        originalScale = transform.localScale;
+    }
+
+    public void ResetSizes()
+    {
+        StartCoroutine(ScaleAndMoveOverTime(originalScale, originalPosition, animationDuration));
+    }
 
     // Function that scales the object and changes its position with an animation curve
     public void ScaleAndChangePosition(float scaleSize, float xPosition, float yPosition)
@@ -89,9 +103,20 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
         print(transform.localScale.x);
 
-        if (transform.localScale.x == 0.6f)
+        if (!executed)
         {
             ScaleAndChangePosition(scaleSize, xPosition, yPosition);
+            executed = true;
+        }
+        else
+        {
+            ResetSizes();
+            executed = false;
+
+            for (int i = 0; i < transformList.childCount; i++)
+            {
+                transformList.GetChild(i).gameObject.SetActive(true);
+            }
         }
 
     }
