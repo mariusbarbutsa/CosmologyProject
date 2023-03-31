@@ -18,14 +18,14 @@ public class TouchInputHandler : MonoBehaviour
             }
         }
 
-        /* if(Input.GetMouseButtonDown(0))
+         if(Input.GetMouseButtonDown(0))
         {
             TouchBase touchBase = GetTouchObject(Input.mousePosition);
             if (touchBase != null)
             {
                 touchBase.GotTouched(-1);
             }
-        } */
+        } 
     }
 
     private TouchBase GetTouchObject(Vector2 inputPosition)

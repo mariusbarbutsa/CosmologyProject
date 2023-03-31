@@ -31,9 +31,9 @@ public class TouchBase : MonoBehaviour
             }
         }
 
-       /* if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0))
         {
             isTouching = false;
-        } */
+        } 
     }
 }
