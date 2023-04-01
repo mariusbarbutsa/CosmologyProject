@@ -10977,6 +10977,7 @@ GameObject:
   - component: {fileID: 1736636789}
   - component: {fileID: 1736636790}
   - component: {fileID: 1736636791}
+  - component: {fileID: 1736636792}
   m_Layer: 0
   m_Name: target one
   m_TagString: Trigger zone
@@ -11064,6 +11065,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1736636792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736636788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b2c98168d354de99ee8ea26485fc83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPosition: {x: 100, y: 100, z: 0}
 --- !u!1 &1744505193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4fba6a98778914455af3cf66c387cd7e, type: 3}
@@ -11609,7 +11623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cfb8eb69cff84364a801ba9bc249b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1836727232
 PrefabInstance:
   m_ObjectHideFlags: 0

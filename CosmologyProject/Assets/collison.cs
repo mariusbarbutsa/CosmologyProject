@@ -6,8 +6,10 @@ using UnityEngine.UIElements;
 public class collison : MonoBehaviour
 {
     
-    public Vector3 newPosition;
-    private bool isColliding;
+    
+    protected bool isColliding;
+
+    // Rigidbody m_Rigidbody;
 
     void OnTriggerEnter(Collider other)
     {
@@ -37,9 +39,10 @@ public class collison : MonoBehaviour
                 if (isColliding && PlayerObject.GetComponent<Collider>().bounds.Intersects(gameObject.GetComponent<Collider>().bounds))
                 {
                     collisionDetected = true;
-                    PlayerObject.transform.position = newPosition;
+                    // m_Rigidbody = GetComponent<Rigidbody>();
+                    // PlayerObject.transform.position = newPosition;
                     // PlayerObject.transform.position = transform.position + new Vector3(0,0,0);
-                    //myTransform = GetComponent<Transform>();
+                    // myTransform = GetComponent<Transform>();
                     // myTransform.position += new Vector3(0, 0, 0);
 
                     break;
