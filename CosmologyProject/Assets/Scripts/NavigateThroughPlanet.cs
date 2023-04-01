@@ -8,7 +8,7 @@ public class NavigateThroughPlanet : MonoBehaviour
     public PlanetTag planetTag;
     public float scaleSize;
     private Vector3 originalScale;
-    public Transform transformList;
+    public GameObject activeCircle;
 
     void Start()
     {
@@ -30,7 +30,12 @@ public class NavigateThroughPlanet : MonoBehaviour
         GameManager.Instance.planetChange -= MakeActiveBigger;
     }
 
-    void OnEnable()
+    /* void OnEnable()
+    {
+        MakeActiveBigger();
+    } */
+
+    void Update()
     {
         MakeActiveBigger();
     }
@@ -47,8 +52,15 @@ public class NavigateThroughPlanet : MonoBehaviour
         if (planetTag == GameManager.Instance.activePlanet)
         {
             ScaleAndChangePosition(scaleSize);
+            activeCircle.SetActive(true);
+        }
+        else
+        {
+            ResetScaleAndChangePosition();
+            activeCircle.SetActive(false);
         }
     }
+
 
     public void ScaleAndChangePosition(float scaleSize)
     {
