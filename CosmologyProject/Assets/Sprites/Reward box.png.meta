@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:CosmologyProject/Assets/Sprites/Reward box.png.meta
 guid: 9dd26a2cc1df349488fea3eef8c2cec8
+========
+guid: d04f9489a12df4b64a2e790af5444ae2
+>>>>>>>> main:CosmologyProject/Assets/Sprites/pointerTransparent.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,10 +71,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

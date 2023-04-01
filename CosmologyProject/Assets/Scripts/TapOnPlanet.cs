@@ -7,26 +7,32 @@ using static UnityEngine.GraphicsBuffer;
 
 public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 {
-    // The duration of the scale animation
-    public float animationDuration = 1.0f;
-    public float scaleSize;
-    public float xPosition;
-    public float yPosition;
+
     public PlanetTag planetTag;
     public Transform transformList;
     public GameObject miniPlanets;
     private bool executed = false;
-    private Vector3 originalPosition;
     private Quaternion originalRotation;
-    private Vector3 originalScale;
     public AnimationCurve animationCurve;
+    public RotateAround rotateAround;
+    public float duration;
+    public float xScale;
+    public float yScale;
+    public float zScale;
+    public float xPosition;
+    public float yPosition;
+    public float zPosition;
+    private Vector3 originalScale;
+    private Vector3 originalPosition;
+    private Vector3 targetScale;
+    private Vector3 targetPosition;
 
     void Start()
     {
-        // Store the object's original transform values when the object is created or loaded
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        // Record the original scale and position of the object
         originalScale = transform.localScale;
+        originalPosition = transform.position;
+
         if (GameManager.Instance != null)
         {
             GameManager.Instance.planetChange += PrintStuff;
@@ -37,56 +43,37 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void ResetSizes()
+    public void ResetSizesAndPosition()
     {
-        StartCoroutine(ScaleAndMoveOverTime(originalScale, originalPosition, animationDuration));
+        transform.localScale = originalScale;
+        transform.position = originalPosition;
     }
 
-    // Function that scales the object and changes its position with an animation curve
-    public void ScaleAndChangePosition(float scaleSize, float xPosition, float yPosition)
+    public void ChangeScaleAndPosition(float xScale, float yScale, float zScale, float xPosition, float yPosition, float zPosition)
     {
-        // Get the current scale of the object
-        Vector3 currentScale = transform.localScale;
+        // Set the target scale and position
+        targetScale = new Vector3(xScale, yScale, zScale);
+        targetPosition = new Vector3(xPosition, yPosition, zPosition);
 
-        // Calculate the target scale based on the scaleSize parameter
-        Vector3 targetScale = currentScale + Vector3.one * scaleSize;
-
-        // Calculate the target position based on the x and y position parameters
-        Vector3 targetPosition = new Vector3(xPosition, yPosition, transform.position.z);
-
-        // Start a coroutine to smoothly scale the object over time
-        StartCoroutine(ScaleAndMoveOverTime(targetScale, targetPosition, animationDuration));
+        StartCoroutine(ScaleAndMoveObject());
     }
 
-    // Coroutine that scales the object and changes its position over time
-    private IEnumerator ScaleAndMoveOverTime(Vector3 targetScale, Vector3 targetPosition, float duration)
+    IEnumerator ScaleAndMoveObject()
     {
-        Vector3 startPosition = transform.position;
-        Vector3 startScale = transform.localScale;
-        float elapsedTime = 0.0f;
+        originalScale = transform.localScale;
+        originalPosition = transform.position;
 
+        float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            // Calculate the current time based on the animation curve
-            float normalizedTime = Mathf.Clamp01(elapsedTime / duration);
-            float curveValue = animationCurve.Evaluate(normalizedTime);
+            float t = elapsedTime / duration;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, t);
 
-            // Calculate the current scale and position based on the animation curve
-            Vector3 currentScale = Vector3.Lerp(startScale, targetScale, curveValue);
-            Vector3 currentPosition = Vector3.Lerp(startPosition, targetPosition, curveValue);
-
-            // Update the scale and position of the object
-            transform.localScale = currentScale;
-            transform.position = currentPosition;
-
-            // Wait for the next frame
-            yield return null;
-
-            // Increment the elapsed time
             elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
-        // Set the final scale and position of the object
         transform.localScale = targetScale;
         transform.position = targetPosition;
     }
@@ -94,8 +81,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
-
-        GameManager.Instance.ChangePlanet(planetTag);
 
         for (int i = 0; i < transformList.childCount; i++)
         {
@@ -115,19 +100,25 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
         if (!executed)
         {
-            ScaleAndChangePosition(scaleSize, xPosition, yPosition);
+            ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
+            GameManager.Instance.ChangePlanet(planetTag);
+
             executed = true;
+            rotateAround.enabled = false;
 
         }
         else
         {
-            ResetSizes();
+            GameManager.Instance.ChangePlanet(PlanetTag.None);
+
+            ResetSizesAndPosition();
             executed = false;
 
             for (int i = 0; i < transformList.childCount; i++)
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
             }
+            rotateAround.enabled = true;
         }
 
     }
