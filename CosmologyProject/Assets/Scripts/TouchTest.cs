@@ -8,21 +8,22 @@ public class TouchTest : TouchBase
     {
         base.GotTouched(fingerID);
         // Do something
-
+        Debug.Log(gameObject.name);
     }
 
     protected override void Update()
     {
         base.Update();
-
-        // Whatever you want
         
         if (isTouching == true)
         {
-            Touch touch = Input.GetTouch(activeFingerID);
-            // Interactive stuff with the specific finger touching this object
-            Debug.Log("touch");
+            Debug.Log("Touch");
 
+            if (GetFingerTouch(out Touch fingerTouch))
+            {
+                transform.position += Vector3.right * Time.deltaTime;
+                // An active finger has been found
+            }
         }
     }
 }

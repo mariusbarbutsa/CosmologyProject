@@ -5,14 +5,13 @@ using UnityEngine;
 public class TouchBase : MonoBehaviour
 {
     protected int activeFingerID;
-    protected bool isTouching = false;
+    public bool isTouching = false;
 
     public virtual void GotTouched(int fingerID)
     {
         activeFingerID = fingerID;
         isTouching = true;
     }
-
 
     protected virtual void Update()
     {
@@ -23,17 +22,39 @@ public class TouchBase : MonoBehaviour
     {
         if(isTouching == true)
         {
-            Touch touch = Input.GetTouch(activeFingerID);
-
-            if (touch.phase == TouchPhase.Ended)
+            if(GetFingerTouch(out Touch fingerTouch))
             {
-                isTouching = false;
+                if (fingerTouch.phase == TouchPhase.Ended)
+                {
+                    isTouching = false;
+                }
             }
         }
 
         if(Input.GetMouseButtonUp(0))
         {
             isTouching = false;
-        } 
+        }
+    }
+
+    public bool GetFingerTouch(out Touch fingerTouch)
+    {
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.fingerId == activeFingerID)
+            {
+                fingerTouch = touch;
+                return true;
+            }
+        }
+
+        fingerTouch = new Touch();
+
+        if (activeFingerID == -1)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
