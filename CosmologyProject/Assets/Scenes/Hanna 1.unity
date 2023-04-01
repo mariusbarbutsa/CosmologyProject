@@ -5264,12 +5264,13 @@ MonoBehaviour:
   activeCircle: {fileID: 293169725}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 616741644}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!135 &198806018
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5877,12 +5878,13 @@ MonoBehaviour:
   activeCircle: {fileID: 1249796320}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 2137607882}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!65 &360896838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6035,6 +6037,7 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
+  isExecuted: 0
 --- !u!135 &387613223
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6692,12 +6695,13 @@ MonoBehaviour:
   activeCircle: {fileID: 562744570}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 1321375429}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!135 &626310345
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12195,12 +12199,13 @@ MonoBehaviour:
   activeCircle: {fileID: 895345267}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 1209096741}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!135 &730060060
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12266,12 +12271,13 @@ MonoBehaviour:
   activeCircle: {fileID: 885335945}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 1276839395}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 76.5
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!65 &731554550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13606,12 +13612,13 @@ MonoBehaviour:
   activeCircle: {fileID: 1111956445}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 1808361689}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!135 &1071009351
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14271,12 +14278,13 @@ MonoBehaviour:
   activeCircle: {fileID: 203287896}
   transformList: {fileID: 32695227}
   PlanetToSwitch: {fileID: 1936001205}
-  xScale: 0
-  yScale: 0
-  zScale: 0
-  xPosition: 0
-  yPosition: 0
-  zPosition: 0
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+  isExecuted: 0
 --- !u!135 &1220833257
 SphereCollider:
   m_ObjectHideFlags: 0
