@@ -5222,6 +5222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198806016}
   - component: {fileID: 198806017}
+  - component: {fileID: 198806018}
   m_Layer: 0
   m_Name: Mercury
   m_TagString: Mercury
@@ -5261,6 +5262,27 @@ MonoBehaviour:
   planetTag: 0
   scaleSize: 0.3
   activeCircle: {fileID: 293169725}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 616741644}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!135 &198806018
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198806015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &203287896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,6 +5835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 360896836}
   - component: {fileID: 360896837}
+  - component: {fileID: 360896838}
   m_Layer: 0
   m_Name: Uranus
   m_TagString: Uranus
@@ -5852,6 +5875,27 @@ MonoBehaviour:
   planetTag: 6
   scaleSize: 0.3
   activeCircle: {fileID: 1249796320}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 2137607882}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!65 &360896838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360896835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 15, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &383630318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5942,8 +5986,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 387613219}
-  - component: {fileID: 387613221}
   - component: {fileID: 387613222}
+  - component: {fileID: 387613223}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Mars
@@ -5968,19 +6012,6 @@ Transform:
   m_Father: {fileID: 1314372657}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &387613221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387613218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8, y: 8, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &387613222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5996,6 +6027,27 @@ MonoBehaviour:
   planetTag: 3
   scaleSize: 0.3
   activeCircle: {fileID: 1908656589}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 701220855}
+  xScale: 5.3
+  yScale: 5.3
+  zScale: 5.3
+  xPosition: 74
+  yPosition: 3.5
+  zPosition: 50
+--- !u!135 &387613223
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387613218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &422073887
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,8 +6627,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &616741647
-BoxCollider:
+--- !u!135 &616741647
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6586,8 +6638,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.955289, y: 10.569429, z: 1}
-  m_Center: {x: 0.038585726, y: -0.23151802, z: 0}
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &626310342
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,6 +6650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626310343}
   - component: {fileID: 626310344}
+  - component: {fileID: 626310345}
   m_Layer: 0
   m_Name: Neptune
   m_TagString: Neptune
@@ -6637,6 +6690,27 @@ MonoBehaviour:
   planetTag: 7
   scaleSize: 0.3
   activeCircle: {fileID: 562744570}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 1321375429}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!135 &626310345
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626310342}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &635890101
 GameObject:
   m_ObjectHideFlags: 0
@@ -12079,6 +12153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730060058}
   - component: {fileID: 730060059}
+  - component: {fileID: 730060060}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Earth
@@ -12118,6 +12193,27 @@ MonoBehaviour:
   planetTag: 2
   scaleSize: 0.3
   activeCircle: {fileID: 895345267}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 1209096741}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!135 &730060060
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730060057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &731554547
 GameObject:
   m_ObjectHideFlags: 0
@@ -12128,6 +12224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731554548}
   - component: {fileID: 731554549}
+  - component: {fileID: 731554550}
   m_Layer: 0
   m_Name: Saturn
   m_TagString: Saturn
@@ -12167,6 +12264,27 @@ MonoBehaviour:
   planetTag: 5
   scaleSize: 0.3
   activeCircle: {fileID: 885335945}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 1276839395}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!65 &731554550
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731554547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &770207963
 GameObject:
   m_ObjectHideFlags: 0
@@ -13446,6 +13564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1071009349}
   - component: {fileID: 1071009350}
+  - component: {fileID: 1071009351}
   m_Layer: 0
   m_Name: Jupiter
   m_TagString: Jupiter
@@ -13485,6 +13604,27 @@ MonoBehaviour:
   planetTag: 4
   scaleSize: 0.3
   activeCircle: {fileID: 1111956445}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 1808361689}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!135 &1071009351
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071009348}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1110981678
 GameObject:
   m_ObjectHideFlags: 0
@@ -14066,8 +14206,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &1209096744
-BoxCollider:
+--- !u!135 &1209096744
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14077,8 +14217,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.777321, y: 8.044378, z: 1}
-  m_Center: {x: -0.1017952, y: 0.02035904, z: 0}
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1220833254
 GameObject:
   m_ObjectHideFlags: 0
@@ -14089,6 +14229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1220833255}
   - component: {fileID: 1220833256}
+  - component: {fileID: 1220833257}
   m_Layer: 0
   m_Name: Venus
   m_TagString: Venus
@@ -14128,6 +14269,27 @@ MonoBehaviour:
   planetTag: 1
   scaleSize: 0.3
   activeCircle: {fileID: 203287896}
+  transformList: {fileID: 32695227}
+  PlanetToSwitch: {fileID: 1936001205}
+  xScale: 0
+  yScale: 0
+  zScale: 0
+  xPosition: 0
+  yPosition: 0
+  zPosition: 0
+--- !u!135 &1220833257
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220833254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1231430548
 GameObject:
   m_ObjectHideFlags: 0
@@ -14450,8 +14612,8 @@ MonoBehaviour:
   xPosition: 76.5
   yPosition: 3.5
   zPosition: 50
---- !u!65 &1276839398
-BoxCollider:
+--- !u!135 &1276839398
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14461,8 +14623,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.5222487, y: 6.4963245, z: 1}
-  m_Center: {x: -0.4277808, y: -0.025925001, z: 0}
+  m_Radius: 3.5
+  m_Center: {x: -0.43, y: 0, z: 0}
 --- !u!1 &1284100348
 GameObject:
   m_ObjectHideFlags: 0
@@ -14649,8 +14811,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &1321375432
-BoxCollider:
+--- !u!135 &1321375432
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14660,8 +14822,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.777811, y: 9.143817, z: 0.99999976}
-  m_Center: {x: 0.4575189, y: 0.09150196, z: 0}
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1328215639
 GameObject:
   m_ObjectHideFlags: 0
@@ -15852,8 +16014,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &1808361692
-BoxCollider:
+--- !u!135 &1808361692
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15863,8 +16025,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.0166893, y: 6.0555787, z: 1}
-  m_Center: {x: 0, y: 0.03888917, z: 0}
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1823792300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3da90ec048877455a89f311b5210dc5f, type: 3}
@@ -16089,7 +16251,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1914678904
@@ -16330,8 +16492,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &1936001208
-BoxCollider:
+--- !u!135 &1936001208
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16341,7 +16503,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.748186, y: 8.276486, z: 7.999998}
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1978516146
 GameObject:
@@ -16969,8 +17131,8 @@ MonoBehaviour:
   xPosition: 74
   yPosition: 3.5
   zPosition: 50
---- !u!65 &2137607885
-BoxCollider:
+--- !u!135 &2137607885
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16980,8 +17142,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.777813, y: 8.022268, z: 1}
-  m_Center: {x: 0.022217752, y: -0.35555106, z: 0}
+  m_Radius: 3.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2142580113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f46c3176d7424422809adc0a5f45bc6, type: 3}

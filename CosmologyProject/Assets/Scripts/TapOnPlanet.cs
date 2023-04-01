@@ -80,7 +80,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("clicked");
+        //Debug.Log("clicked");
 
         for (int i = 0; i < transformList.childCount; i++)
         {
@@ -142,7 +142,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     private void PrintStuff()
     {
-        Debug.Log("Awesomeness!");
+        //Debug.Log("Awesomeness!");
         //miniPlanets.SetActive(true);
     }
 
