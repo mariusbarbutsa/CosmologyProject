@@ -18,12 +18,14 @@ public class ChangingUI : MonoBehaviour
     {
         mainMenu.gameObject.SetActive(false);
         difficultyScene.gameObject.SetActive(true);
+        resultsScreen.gameObject.SetActive(false);
     }
 
     public void GoBackDifficulty()
     {
         mainMenu.gameObject.SetActive(true);
         difficultyScene.gameObject.SetActive(false);
+        resultsScreen.gameObject.SetActive(false);
     }
 
     public void GoToEasyQuiz()
@@ -31,12 +33,14 @@ public class ChangingUI : MonoBehaviour
         quizEasyScreen.gameObject.SetActive(true);
         difficultyScene.gameObject.SetActive(false);
         question1.gameObject.SetActive(true);
+        resultsScreen.gameObject.SetActive(false);
     }
 
     public void QuitQuiz()
     {
         quizEasyScreen.gameObject.SetActive(false);
         difficultyScene.gameObject.SetActive(true);
+        question1.gameObject.SetActive(false);
     }
 
 }

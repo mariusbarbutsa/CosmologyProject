@@ -5183,7 +5183,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1893954470}
   difficultyScene: {fileID: 255738199}
   quizEasyScreen: {fileID: 135985699}
-  resultsScreen: {fileID: 0}
+  resultsScreen: {fileID: 1808097463}
   question1: {fileID: 342017407}
 --- !u!4 &677566426
 Transform:
@@ -6723,7 +6723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &999212200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7227,7 +7227,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 677566425}
         m_TargetAssemblyTypeName: ChangingUI, Assembly-CSharp
-        m_MethodName: QuitQuiz
+        m_MethodName: PlayQuizButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
