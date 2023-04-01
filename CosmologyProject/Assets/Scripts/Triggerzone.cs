@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Triggerzone : MonoBehaviour
 {
+    public string triggerTag = "Trigger zone";
+    public Vector3 newPosition = new Vector3(0, 1, 0);
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.CompareTag(triggerTag))
         {
-            Debug.Log("triggered");
+            gameObject.transform.position = newPosition;
         }
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - Uranus
   - Neptune
   - Sun
+  - Trigger zone
   layers:
   - Default
   - TransparentFX
