@@ -6,19 +6,19 @@ public class TouchInputHandler : MonoBehaviour
 {
     void Update()
     {
-        foreach(Touch t in Input.touches)
+        foreach (Touch t in Input.touches)
         {
-            if(t.phase == TouchPhase.Began)
+            if (t.phase == TouchPhase.Began)
             {
                 TouchBase touchBase = GetTouchObject(t.position);
-                if(touchBase != null)
+                if (touchBase != null)
                 {
                     touchBase.GotTouched(t.fingerId);
                 }
             }
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             TouchBase touchBase = GetTouchObject(Input.mousePosition);
             if (touchBase != null)
@@ -34,11 +34,14 @@ public class TouchInputHandler : MonoBehaviour
         RaycastHit[] objectsTouched = Physics.RaycastAll(worldPos, Camera.main.transform.forward, 100f);
         if (objectsTouched.Length > 0)
         {
-            GameObject objectTouched = objectsTouched[0].collider.gameObject;
-            TouchBase touchBase = objectTouched.GetComponent<TouchBase>();
-            if (touchBase != null)
+            foreach (RaycastHit hit in objectsTouched)
             {
-                return touchBase;
+                GameObject objectTouched = hit.collider.gameObject;
+                TouchBase touchBase = objectTouched.GetComponent<TouchBase>();
+                if (touchBase != null)
+                {
+                    return touchBase;
+                }
             }
         }
 

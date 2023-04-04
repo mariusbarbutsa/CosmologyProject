@@ -4,13 +4,54 @@ using UnityEngine;
 
 public class QuizManager : MonoBehaviour
 {
+    public List<MoleculeType> correctAnswers = new List<MoleculeType>();
+
+    public QuizTarget[] quizTargets;
+
+
     public Question[] questions;
+    private float startTime;
+    private float endTime;
+    private bool isCounting = false;
+    private float elapsedTime = 0.0f;
 
     public void Update()
     {
         //add method: press on button to ask first question
         //Question myQuestion = GetQuestion(0);
     }
+
+    public void Confirm()
+    {
+        Debug.Log(CheckSolution());
+    }
+
+    public bool CheckSolution()
+    {
+        int counter = 0;
+        foreach (QuizTarget target in quizTargets)
+        {
+            if (target.assignedMolecule != MoleculeType.None)
+            {
+                Debug.Log("A");
+                if (correctAnswers.Contains(target.assignedMolecule))
+                {
+                    Debug.Log("B");
+                    counter++;
+                }
+                else
+                {
+                    Debug.Log("C");
+                    return false;
+                }
+            }
+        }
+
+        Debug.Log("D");
+        return counter == correctAnswers.Count;
+    }
+
+
 
     public Question GetQuestion(int index)
     {
@@ -30,4 +71,29 @@ public class QuizManager : MonoBehaviour
             return false;
         }
     }
+
+    public void StartCount()
+    {
+        if (!isCounting)
+        {
+            startTime = Time.time;
+            isCounting = true;
+        }
+    }
+
+    public void StopCount()
+    {
+        if (isCounting)
+        {
+            endTime = Time.time;
+            elapsedTime = endTime - startTime;
+            isCounting = false;
+        }
+    }
+
+    public float GetElapsedTime()
+    {
+        return elapsedTime;
+    }
 }
+
