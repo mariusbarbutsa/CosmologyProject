@@ -11,6 +11,8 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
     public PlanetTag planetTag;
     public float scaleSize;
     private Vector3 originalScale;
+    private Vector3 originalScalePlanet;
+    private Vector3 originalPositionPlanet;
     public GameObject activeCircle;
     public Transform transformList;
     public GameObject PlanetToSwitch;
@@ -21,6 +23,7 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
     public float yPosition;
     public float zPosition;
     public bool isExecuted = false;
+
 
     void Start()
     {
@@ -50,6 +53,7 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         MakeActiveBigger();
+
     }
 
     void OnDisable()
@@ -86,8 +90,18 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
+
         GameManager.Instance.ChangePlanet(planetTag);
+        isExecuted = true;
+
         TapOnPlanet tapOnPlanet = PlanetToSwitch.GetComponent<TapOnPlanet>();
+        Vector3 originalScale = tapOnPlanet.originalScale;
+        Vector3 originalPosition = tapOnPlanet.originalPosition;
+        originalScalePlanet = originalScale;
+        originalPositionPlanet = originalPosition;
+        Debug.Log(originalScalePlanet + "and " + originalPositionPlanet);
+
         Debug.Log("This planet has been clicked");
 
         for (int i = 0; i < transformList.childCount; i++)
@@ -101,9 +115,12 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
             else
             {
                 transformList.GetChild(i).gameObject.SetActive(false);
-                tapOnPlanet.ResetSizesAndPosition();
+                //tapOnPlanet.transform.localScale = originalScalePlanet;
+                //tapOnPlanet.transform.position = originalPositionPlanet;
+                Debug.Log(originalScalePlanet + "and " + originalPositionPlanet);
             }
         }
+
 
 
     }

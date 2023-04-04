@@ -11,6 +11,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public PlanetTag planetTag;
     public Transform transformList;
     public GameObject miniPlanets;
+    public GameObject planet;
     private bool executed = false;
     private Quaternion originalRotation;
     public AnimationCurve animationCurve;
@@ -22,8 +23,8 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public float xPosition;
     public float yPosition;
     public float zPosition;
-    private Vector3 originalScale;
-    private Vector3 originalPosition;
+    public Vector3 originalScale;
+    public Vector3 originalPosition;
     private Vector3 targetScale;
     private Vector3 targetPosition;
 
@@ -40,6 +41,16 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         else
         {
             Debug.LogError("GameManager.Instance is null");
+        }
+    }
+
+    void Update()
+    {
+
+        if (!CompareTag(GameManager.Instance.activePlanet.ToString()))
+        {
+            ResetSizesAndPosition();
+            Debug.Log("maybe you would work now?!");
         }
     }
 
@@ -80,47 +91,40 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //Debug.Log("clicked");
+        NavigateThroughPlanet navigateThroughPlanet = planet.GetComponent<NavigateThroughPlanet>();
+        bool isExecuted = navigateThroughPlanet.isExecuted;
 
-        for (int i = 0; i < transformList.childCount; i++)
+        if (!CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
-
-            if (transformList.GetChild(i).CompareTag(planetTag.ToString()))
+            for (int i = 0; i < transformList.childCount; i++)
             {
-                transformList.GetChild(i).gameObject.SetActive(true);
+                if (transformList.GetChild(i).CompareTag(planetTag.ToString()))
+                {
+                    transformList.GetChild(i).gameObject.SetActive(true);
+                }
+                else
+                {
+                    transformList.GetChild(i).gameObject.SetActive(false);
+                }
             }
-            else
-            {
-                transformList.GetChild(i).gameObject.SetActive(false);
-            }
 
-        }
-
-        print(transform.localScale.x);
-
-        if (!executed)
-        {
             ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
             GameManager.Instance.ChangePlanet(planetTag);
-
             executed = true;
             rotateAround.enabled = false;
 
         }
-        else
+        else if (CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
             GameManager.Instance.ChangePlanet(PlanetTag.None);
-
             ResetSizesAndPosition();
+            rotateAround.enabled = true;
             executed = false;
-
             for (int i = 0; i < transformList.childCount; i++)
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
             }
-            rotateAround.enabled = true;
         }
-
     }
 
 
@@ -132,7 +136,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     void OnEnable()
     {
-
     }
 
     void OnDisable()

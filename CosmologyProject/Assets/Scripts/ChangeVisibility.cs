@@ -14,6 +14,7 @@ public class ChangeVisibility : MonoBehaviour
     public float yPosition;
     public float moveDuration;
     private Vector3 originalPosition;
+    public GameObject UIPlanet;
 
     void Awake()
     {
@@ -40,6 +41,7 @@ public class ChangeVisibility : MonoBehaviour
         if (GameManager.Instance.activePlanet != PlanetTag.None)
         {
             //Debug.Log("MiniPlanets are visible");
+            UIPlanet.SetActive(true);
             miniPlanets.SetActive(true);
             uiContent01.SetActive(true);
             // Start the coroutine to move the miniPlanets back to their original position
@@ -48,6 +50,7 @@ public class ChangeVisibility : MonoBehaviour
         }
         else
         {
+            UIPlanet.SetActive(false);
             miniPlanets.SetActive(false);
             uiContent01.SetActive(false);
             ResetPositionMiniPlanets();
