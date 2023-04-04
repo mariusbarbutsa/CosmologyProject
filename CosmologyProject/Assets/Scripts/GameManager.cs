@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 
     public delegate void PlanetChange();
     public PlanetChange planetChange;
-
     public static GameManager Instance;
+
     void Awake()
     {
         if (Instance == null)

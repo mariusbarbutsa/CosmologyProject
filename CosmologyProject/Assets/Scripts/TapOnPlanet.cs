@@ -46,14 +46,11 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
-        for (int i = 0; i < transformList.childCount; i++)
-        {
-            if (!transformList.GetChild(i).CompareTag(GameManager.Instance.activePlanet.ToString()))
-            {
-                //ResetSizesAndPosition();
-                Debug.Log("why is it not working properly?!");
-            }
 
+        if (!CompareTag(GameManager.Instance.activePlanet.ToString()))
+        {
+            ResetSizesAndPosition();
+            Debug.Log("maybe you would work now?!");
         }
     }
 
@@ -94,19 +91,13 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Get a reference to an instance of MyScript
         NavigateThroughPlanet navigateThroughPlanet = planet.GetComponent<NavigateThroughPlanet>();
         bool isExecuted = navigateThroughPlanet.isExecuted;
 
-
-        //Debug.Log("clicked");
-
-
-        if (!executed)
+        if (!CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
             for (int i = 0; i < transformList.childCount; i++)
             {
-
                 if (transformList.GetChild(i).CompareTag(planetTag.ToString()))
                 {
                     transformList.GetChild(i).gameObject.SetActive(true);
@@ -115,31 +106,25 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
                 {
                     transformList.GetChild(i).gameObject.SetActive(false);
                 }
-
             }
 
             ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
             GameManager.Instance.ChangePlanet(planetTag);
-
             executed = true;
             rotateAround.enabled = false;
 
         }
         else if (CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
-            Debug.Log("this was executed now 02.04.2023");
             GameManager.Instance.ChangePlanet(PlanetTag.None);
-
             ResetSizesAndPosition();
+            rotateAround.enabled = true;
             executed = false;
-
             for (int i = 0; i < transformList.childCount; i++)
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
             }
-            rotateAround.enabled = true;
         }
-
     }
 
 
@@ -151,7 +136,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     void OnEnable()
     {
-
     }
 
     void OnDisable()
