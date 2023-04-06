@@ -32,15 +32,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         // Record the original scale and position of the object
         originalScale = transform.localScale;
         originalPosition = transform.position;
-
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.planetChange += PrintStuff;
-        }
-        else
-        {
-            Debug.LogError("GameManager.Instance is null");
-        }
     }
 
     void Update()
@@ -122,28 +113,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
                 transformList.GetChild(i).gameObject.SetActive(true);
             }
         }
-    }
-
-
-
-    void OnDestroy()
-    {
-        GameManager.Instance.planetChange -= PrintStuff;
-    }
-
-    void OnEnable()
-    {
-    }
-
-    void OnDisable()
-    {
-
-    }
-
-    private void PrintStuff()
-    {
-        //Debug.Log("Awesomeness!");
-        //miniPlanets.SetActive(true);
     }
 
 }

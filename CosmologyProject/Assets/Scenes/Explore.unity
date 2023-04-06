@@ -7414,9 +7414,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427493809}
+  - component: {fileID: 427493810}
   m_Layer: 0
   m_Name: FourthBullet
-  m_TagString: Untagged
+  m_TagString: FourthBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7438,6 +7439,21 @@ Transform:
   m_Father: {fileID: 1632251052}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -420}
+--- !u!114 &427493810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427493808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb36ced9d91f944af8d79e03547879a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: 3
+  transformList: {fileID: 1632251052}
+  BulletAttached: {fileID: 427493808}
 --- !u!1 &430227642
 GameObject:
   m_ObjectHideFlags: 0
@@ -14697,9 +14713,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777077731}
+  - component: {fileID: 777077732}
   m_Layer: 0
   m_Name: SecondBullet
-  m_TagString: Untagged
+  m_TagString: SecondBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14721,6 +14738,21 @@ Transform:
   m_Father: {fileID: 1632251052}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -380}
+--- !u!114 &777077732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777077730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb36ced9d91f944af8d79e03547879a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: 1
+  transformList: {fileID: 1632251052}
+  BulletAttached: {fileID: 777077730}
 --- !u!1 &783820092
 GameObject:
   m_ObjectHideFlags: 0
@@ -17262,6 +17294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlanet: 8
+  activeBullet: 5
 --- !u!4 &1188909165
 Transform:
   m_ObjectHideFlags: 0
@@ -18312,9 +18345,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304693099}
+  - component: {fileID: 1304693100}
   m_Layer: 0
   m_Name: FifthBullet
-  m_TagString: Untagged
+  m_TagString: FifthBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18336,6 +18370,21 @@ Transform:
   m_Father: {fileID: 1632251052}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -440}
+--- !u!114 &1304693100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304693098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb36ced9d91f944af8d79e03547879a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: 4
+  transformList: {fileID: 1632251052}
+  BulletAttached: {fileID: 1304693098}
 --- !u!1 &1314372656
 GameObject:
   m_ObjectHideFlags: 0
@@ -20809,9 +20858,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1807802884}
+  - component: {fileID: 1807802885}
+  - component: {fileID: 1807802886}
   m_Layer: 0
   m_Name: FirstBullet
-  m_TagString: Untagged
+  m_TagString: FirstBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20833,6 +20884,34 @@ Transform:
   m_Father: {fileID: 1632251052}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807802885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807802883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb36ced9d91f944af8d79e03547879a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: 0
+  transformList: {fileID: 1632251052}
+  BulletAttached: {fileID: 1807802883}
+--- !u!135 &1807802886
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807802883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.23759931
+  m_Center: {x: 3.2464533, y: 0.000014781952, z: 0}
 --- !u!1 &1808361689
 GameObject:
   m_ObjectHideFlags: 0
@@ -22536,9 +22615,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2078151787}
+  - component: {fileID: 2078151788}
   m_Layer: 0
   m_Name: ThirdBullet
-  m_TagString: Untagged
+  m_TagString: ThirdBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22560,6 +22640,21 @@ Transform:
   m_Father: {fileID: 1632251052}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -400}
+--- !u!114 &2078151788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078151786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb36ced9d91f944af8d79e03547879a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletTag: 2
+  transformList: {fileID: 1632251052}
+  BulletAttached: {fileID: 2078151786}
 --- !u!1001 &2109592286
 PrefabInstance:
   m_ObjectHideFlags: 0
