@@ -15883,6 +15883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b747147af99b54690999636bd8243cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctAnswers: 
+  quizTargets: []
   questions:
   - {fileID: 11400000, guid: 5583e5e98740d489fa6c02d830a49462, type: 2}
 --- !u!4 &975437073
