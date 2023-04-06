@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 135985697}
   - component: {fileID: 135985696}
   m_Layer: 5
-  m_Name: EasyQuestion_01
+  m_Name: Question_01 UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1101,8 +1101,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 952389289}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1963853684}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3052,7 +3052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342017408}
   m_Layer: 0
-  m_Name: Question 1
+  m_Name: Question_01  gameObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3072,8 +3072,8 @@ Transform:
   m_Children:
   - {fileID: 2147374607}
   - {fileID: 2129646294}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1963853684}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350255698
 GameObject:
@@ -3112,6 +3112,7 @@ MonoBehaviour:
   - {fileID: 478206438}
   questions:
   - {fileID: 11400000, guid: 5583e5e98740d489fa6c02d830a49462, type: 2}
+  scoreText: {fileID: 558909078}
 --- !u!4 &350255700
 Transform:
   m_ObjectHideFlags: 0
@@ -3125,7 +3126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355686959
 GameObject:
@@ -3157,6 +3158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlanet: 8
+  activeBullet: 5
 --- !u!4 &355686961
 Transform:
   m_ObjectHideFlags: 0
@@ -3170,7 +3172,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &360029966 stripped
 Transform:
@@ -4817,7 +4819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 8/10
+  m_text: 0/1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1986c68b4dd3642e0ae071affdddc35e, type: 2}
   m_sharedMaterial: {fileID: 336933625316529479, guid: 1986c68b4dd3642e0ae071affdddc35e, type: 2}
@@ -5294,8 +5296,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: 0, y: -1.03, z: -1}
+  m_Radius: 3.2
+  m_Center: {x: 0, y: -2, z: -1}
 --- !u!114 &632845739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5339,6 +5341,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 8
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1 &655143103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,8 +5432,9 @@ MonoBehaviour:
   difficultyScene: {fileID: 255738199}
   quizEasyScreen: {fileID: 135985699}
   resultsScreen: {fileID: 1808097463}
-  question1: {fileID: 342017407}
+  question1: {fileID: 1963853683}
   timeText: {fileID: 269738910}
+  composites: {fileID: 2147374606}
 --- !u!4 &677566426
 Transform:
   m_ObjectHideFlags: 0
@@ -5443,7 +5448,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699591946
 GameObject:
@@ -6076,7 +6081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUESTION 1 OF 3
+  m_text: QUESTION 1 OF 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e10f35b13b3b04f7ca5e5d46e02b815a, type: 2}
   m_sharedMaterial: {fileID: 757174354740028625, guid: e10f35b13b3b04f7ca5e5d46e02b815a, type: 2}
@@ -6195,7 +6200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804116969
 GameObject:
@@ -7004,7 +7009,7 @@ Transform:
   - {fileID: 252676979}
   - {fileID: 1334902820}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1011311455
 GameObject:
@@ -7189,8 +7194,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: -0.54, y: -0.56, z: -1}
+  m_Radius: 3.2
+  m_Center: {x: -0.54, y: -2, z: -1}
 --- !u!114 &1013890255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7234,6 +7239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 2
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1001 &1016673058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7359,8 +7366,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: -0.82, y: -0.78, z: -1}
+  m_Radius: 3.5
+  m_Center: {x: -0.82, y: -2, z: -1}
 --- !u!114 &1022856002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7404,6 +7411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 6
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1 &1024166943
 GameObject:
   m_ObjectHideFlags: 0
@@ -8281,8 +8290,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: 0, y: -1.21, z: -1}
+  m_Radius: 3.2
+  m_Center: {x: 0, y: -2, z: -1}
 --- !u!114 &1176541991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8326,6 +8335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 5
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1 &1181392231
 GameObject:
   m_ObjectHideFlags: 0
@@ -8488,8 +8499,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: 0, y: -1.11, z: -1}
+  m_Radius: 3.5
+  m_Center: {x: 0, y: -2, z: -1}
 --- !u!54 &1183731389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8520,6 +8531,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 4
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1 &1185572561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8566,7 +8579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1185572565
 MonoBehaviour:
@@ -8941,8 +8954,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: -0.84, y: -0.85, z: -1}
+  m_Radius: 3.2
+  m_Center: {x: -0.84, y: -2, z: -1}
 --- !u!54 &1255486937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8973,6 +8986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 3
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1 &1267523505
 GameObject:
   m_ObjectHideFlags: 0
@@ -11645,8 +11660,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: 0, y: -1.07, z: -1}
+  m_Radius: 3.2
+  m_Center: {x: 0, y: -2, z: -1}
 --- !u!54 &1800571612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11677,6 +11692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 7
   isSnapping: 0
+  originalPosition: {x: 9, y: -11, z: -3.5}
+  Composite: {fileID: 1800571608}
 --- !u!1 &1806864820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d7cb83fa46574b1ebab245368a3b8c2, type: 3}
@@ -11815,7 +11832,7 @@ RectTransform:
   - {fileID: 68378182}
   - {fileID: 1648597980}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11870,8 +11887,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.6
-  m_Center: {x: -0.79, y: -0.62, z: -1}
+  m_Radius: 3.5
+  m_Center: {x: -0.79, y: -2, z: -1}
 --- !u!114 &1828271378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11915,6 +11932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 1
   isSnapping: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  Composite: {fileID: 0}
 --- !u!1001 &1836727232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13316,6 +13335,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954359202}
   m_CullTransparentMesh: 1
+--- !u!1 &1963853683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963853684}
+  m_Layer: 0
+  m_Name: Question_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963853684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963853683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 342017408}
+  - {fileID: 135985700}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968086215
 GameObject:
   m_ObjectHideFlags: 0
