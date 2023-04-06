@@ -15,6 +15,11 @@ TagManager:
   - Sun
   - Trigger zone
   - None
+  - FirstBullet
+  - SecondBullet
+  - ThirdBullet
+  - FourthBullet
+  - FifthBullet
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PlanetTag activePlanet = PlanetTag.None;
+    public BulletList activeBullet = BulletList.None;
 
     public delegate void PlanetChange();
     public PlanetChange planetChange;
+
+    public delegate void BulletChange();
+    public BulletChange bulletChange;
     public static GameManager Instance;
 
     void Awake()
@@ -33,6 +37,15 @@ public class GameManager : MonoBehaviour
             planetChange();
         }
     }
+
+    public void ChangeBullet(BulletList tag)
+    {
+        activeBullet = tag;
+        if (activeBullet != null)
+        {
+            bulletChange();
+        }
+    }
 }
 
 public enum PlanetTag
@@ -45,5 +58,15 @@ public enum PlanetTag
     Saturn,
     Uranus,
     Neptune,
+    None
+}
+
+public enum BulletList
+{
+    FirstBullet,
+    SecondBullet,
+    ThirdBullet,
+    FourthBullet,
+    FifthBullet,
     None
 }
