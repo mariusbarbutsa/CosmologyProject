@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Numerics;
 
 public class ChangingUI : MonoBehaviour
 {
@@ -14,9 +15,7 @@ public class ChangingUI : MonoBehaviour
     public GameObject question1;
     QuizManager timer = new QuizManager();
     public TextMeshProUGUI timeText;
-    
-
-
+    public GameObject composites;
 
 
     public void PlayQuizButton()
@@ -35,6 +34,8 @@ public class ChangingUI : MonoBehaviour
         resultsScreen.gameObject.SetActive(false);
         question1.gameObject.SetActive(false);
         quizEasyScreen.gameObject.SetActive(false);
+        Molecule transformOrigin = GameObject.Find("composites").GetComponentInChildren<Molecule>();
+        transformOrigin.TransformOrigin();
     }
 
     public void GoToEasyQuiz()
@@ -55,6 +56,8 @@ public class ChangingUI : MonoBehaviour
         resultsScreen.gameObject.SetActive(false);
         question1.gameObject.SetActive(false);
         quizEasyScreen.gameObject.SetActive(false);
+        Molecule transformOrigin = GameObject.Find("composites").GetComponentInChildren<Molecule>();
+        transformOrigin.TransformOrigin();
     }
 
     public void ResultsScreen()
@@ -65,6 +68,9 @@ public class ChangingUI : MonoBehaviour
         question1.gameObject.SetActive(false);
         quizEasyScreen.gameObject.SetActive(false);
         timer.StopCount();
+        //TransformOrigin();
+        Molecule transformOrigin = GameObject.Find("composites").GetComponentInChildren<Molecule>();
+        transformOrigin.TransformOrigin();
     }
 
     public void SetTimeElapsed()

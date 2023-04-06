@@ -8,6 +8,8 @@ public class Molecule : MonoBehaviour
 {
     public MoleculeType myType;
     public bool isSnapping = false;
+    public Vector3 originalPosition;
+    public GameObject Composite;
 
     private TouchTest touchInput;
     private QuizTarget myTarget;
@@ -15,6 +17,7 @@ public class Molecule : MonoBehaviour
     void Awake()
     {
         touchInput = GetComponent<TouchTest>();
+        originalPosition = transform.position;
     }
 
     void OnTriggerEnter(Collider other)
@@ -55,7 +58,15 @@ public class Molecule : MonoBehaviour
             }
         }
     }
+
+
+    public void TransformOrigin()
+    {
+        transform.position = originalPosition;
+    }
 }
+
+
 
 public enum MoleculeType
 {

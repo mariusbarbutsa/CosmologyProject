@@ -17,6 +17,7 @@ public class QuizManager : MonoBehaviour
     private bool isCounting = false;
     private float elapsedTime = 0.0f;
 
+
     public void Update()
     {
         //add method: press on button to ask first question
