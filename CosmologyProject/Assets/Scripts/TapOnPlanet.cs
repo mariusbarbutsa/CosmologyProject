@@ -12,7 +12,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public Transform transformList;
     public GameObject miniPlanets;
     public GameObject planet;
-    private bool executed = false;
     private Quaternion originalRotation;
     public AnimationCurve animationCurve;
     public RotateAround rotateAround;
@@ -110,7 +109,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
             ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
             GameManager.Instance.ChangePlanet(planetTag);
-            executed = true;
             rotateAround.enabled = false;
 
         }
@@ -119,7 +117,6 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
             GameManager.Instance.ChangePlanet(PlanetTag.None);
             ResetSizesAndPosition();
             rotateAround.enabled = true;
-            executed = false;
             for (int i = 0; i < transformList.childCount; i++)
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
