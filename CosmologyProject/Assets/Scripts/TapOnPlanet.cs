@@ -27,6 +27,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     private Vector3 targetScale;
     private Vector3 targetPosition;
 
+
     void Start()
     {
         // Record the original scale and position of the object
@@ -81,8 +82,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        NavigateThroughPlanet navigateThroughPlanet = planet.GetComponent<NavigateThroughPlanet>();
-        bool isExecuted = navigateThroughPlanet.isExecuted;
+        GameManager.Instance.ChangeBullet(BulletList.FirstBullet);
 
         if (!CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
@@ -100,19 +100,21 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
 
             ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
             GameManager.Instance.ChangePlanet(planetTag);
-            rotateAround.enabled = false;
+            //SetActiveInfoScreen();
+            //rotateAround.enabled = false;
 
         }
         else if (CompareTag(GameManager.Instance.activePlanet.ToString()))
         {
             GameManager.Instance.ChangePlanet(PlanetTag.None);
             ResetSizesAndPosition();
-            rotateAround.enabled = true;
+            //rotateAround.enabled = true;
             for (int i = 0; i < transformList.childCount; i++)
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
             }
         }
     }
+
 
 }

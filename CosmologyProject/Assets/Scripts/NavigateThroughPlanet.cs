@@ -42,7 +42,7 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
 
     void OnDestroy()
     {
-        GameManager.Instance.planetChange -= MakeActiveBigger;
+        //GameManager.Instance.planetChange -= MakeActiveBigger;
     }
 
     /* void OnEnable()
