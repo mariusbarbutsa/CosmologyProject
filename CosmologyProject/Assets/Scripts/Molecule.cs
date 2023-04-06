@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(TouchTest))]
 public class Molecule : MonoBehaviour
@@ -9,16 +10,28 @@ public class Molecule : MonoBehaviour
     public MoleculeType myType;
     public bool isSnapping = false;
     public Vector3 originalPosition;
-    public GameObject Composite;
-
     private TouchTest touchInput;
     private QuizTarget myTarget;
+    public Button buttonToCheck;
+
 
     void Awake()
     {
         touchInput = GetComponent<TouchTest>();
-        originalPosition = transform.position;
     }
+
+    void Start()
+    {
+        originalPosition = transform.position;
+        buttonToCheck.onClick.AddListener(ResetPosition);
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = originalPosition;
+        Debug.Log("original position 02: " + originalPosition);
+    }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -59,11 +72,6 @@ public class Molecule : MonoBehaviour
         }
     }
 
-
-    public void TransformOrigin()
-    {
-        transform.position = originalPosition;
-    }
 }
 
 

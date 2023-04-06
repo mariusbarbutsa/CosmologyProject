@@ -36,12 +36,11 @@ public class QuizManager : MonoBehaviour
         {
             if (target.assignedMolecule != MoleculeType.None)
             {
-               // Debug.Log("A");
+                // Debug.Log("A");
                 if (correctAnswers.Contains(target.assignedMolecule))
                 {
                     // Debug.Log("B");
                     counter++;
-                    scoreText.text = "1/1";
                 }
                 else
                 {
@@ -50,8 +49,15 @@ public class QuizManager : MonoBehaviour
                 }
             }
         }
+        if (counter == 4)
+        {
+            scoreText.text = "1/1";
+        }
+        else
+        {
+            scoreText.text = "0/1";
+        }
 
-        // Debug.Log("D");
         return counter == correctAnswers.Count;
     }
 
