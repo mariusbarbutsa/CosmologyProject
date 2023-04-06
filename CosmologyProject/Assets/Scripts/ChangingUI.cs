@@ -14,6 +14,7 @@ public class ChangingUI : MonoBehaviour
     public GameObject question1;
     QuizManager timer = new QuizManager();
     public TextMeshProUGUI timeText;
+    
 
 
 
