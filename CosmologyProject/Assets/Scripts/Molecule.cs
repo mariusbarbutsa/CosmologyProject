@@ -60,10 +60,10 @@ public class Molecule : MonoBehaviour
 public enum MoleculeType
 {
     None,
-    Bromium,
+    Bromine,
     Hydrogen,
     Oxygen,
-    Methan,
+    Methane,
     CO2,
     Nitrogen,
     Helium,
