@@ -110,7 +110,7 @@ public class NavigateThroughPlanet : MonoBehaviour, IPointerClickHandler
             if (transformList.GetChild(i).CompareTag(GameManager.Instance.activePlanet.ToString()))
             {
                 transformList.GetChild(i).gameObject.SetActive(true);
-                tapOnPlanet.ChangeScaleAndPosition(xScale, yScale, zScale, xPosition, yPosition, zPosition);
+                tapOnPlanet.ChangeScaleAndPositionDefault(xScale, yScale, zScale, xPosition, yPosition, zPosition);
             }
             else
             {

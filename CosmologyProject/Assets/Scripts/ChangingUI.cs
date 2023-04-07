@@ -16,6 +16,11 @@ public class ChangingUI : MonoBehaviour
     public GameObject question1;
     QuizManager timer = new QuizManager();
     public TextMeshProUGUI timeText;
+    public GameObject mainMenuDisplay;
+    public GameObject exploreDisplay;
+    public GameObject displayedIntroText;
+    public CanvasGroup backButton;
+    public Transform transformList;
 
 
 
@@ -36,7 +41,6 @@ public class ChangingUI : MonoBehaviour
         resultsScreen.gameObject.SetActive(false);
         question1.gameObject.SetActive(false);
         quizEasyScreen.gameObject.SetActive(false);
-        Molecule transformOrigin = GameObject.Find("composites").GetComponentInChildren<Molecule>();
     }
 
     public void GoToEasyQuiz()
@@ -82,12 +86,29 @@ public class ChangingUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        mainMenuDisplay.gameObject.SetActive(true);
+        exploreDisplay.gameObject.SetActive(false);
     }
 
     public void GoToExplore()
     {
-        SceneManager.LoadScene(0);
+        mainMenuDisplay.gameObject.SetActive(false);
+        exploreDisplay.gameObject.SetActive(true);
+    }
+
+    public void DisplayIntroText()
+    {
+        displayedIntroText.SetActive(true);
+        backButton.alpha = 1;
+    }
+
+    public void ResetExplore()
+    {
+        GameManager.Instance.ChangePlanet(PlanetTag.None);
+        for (int i = 0; i < transformList.childCount; i++)
+        {
+            transformList.GetChild(i).gameObject.SetActive(true);
+        }
     }
 
 }

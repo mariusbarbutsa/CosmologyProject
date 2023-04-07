@@ -15,6 +15,8 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     private Quaternion originalRotation;
     public AnimationCurve animationCurve;
     public RotateAround rotateAround;
+    public GameObject displayedIntroText;
+    public CanvasGroup backButton;
     public float duration;
     public float xScale;
     public float yScale;
@@ -26,6 +28,9 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public Vector3 originalPosition;
     private Vector3 targetScale;
     private Vector3 targetPosition;
+
+
+
 
 
     void Start()
@@ -58,6 +63,14 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
         targetPosition = new Vector3(xPosition, yPosition, zPosition);
 
         StartCoroutine(ScaleAndMoveObject());
+    }
+
+    public void ChangeScaleAndPositionDefault(float xScale, float yScale, float zScale, float xPosition, float yPosition, float zPosition)
+    {
+        targetScale = new Vector3(xScale, yScale, zScale);
+        targetPosition = new Vector3(xPosition, yPosition, zPosition);
+        transform.localScale = targetScale;
+        transform.position = targetPosition;
     }
 
     IEnumerator ScaleAndMoveObject()
@@ -102,6 +115,8 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
             GameManager.Instance.ChangePlanet(planetTag);
             //SetActiveInfoScreen();
             //rotateAround.enabled = false;
+            displayedIntroText.SetActive(false);
+            backButton.alpha = 1;
 
         }
         else if (CompareTag(GameManager.Instance.activePlanet.ToString()))
