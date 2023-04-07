@@ -82,12 +82,12 @@ public class ChangingUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Main menu");
+        SceneManager.LoadScene(1);
     }
 
     public void GoToExplore()
     {
-        SceneManager.LoadScene("Explore");
+        SceneManager.LoadScene(0);
     }
 
 }

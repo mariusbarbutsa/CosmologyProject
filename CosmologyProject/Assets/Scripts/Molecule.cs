@@ -29,7 +29,7 @@ public class Molecule : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = originalPosition;
-        Debug.Log("original position 02: " + originalPosition);
+        //Debug.Log("original position 02: " + originalPosition);
     }
 
 

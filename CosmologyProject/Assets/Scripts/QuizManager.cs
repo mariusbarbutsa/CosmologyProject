@@ -16,6 +16,8 @@ public class QuizManager : MonoBehaviour
     private float endTime;
     private bool isCounting = false;
     private float elapsedTime = 0.0f;
+    private int counter = 0;
+
 
 
     public void Update()
@@ -24,41 +26,47 @@ public class QuizManager : MonoBehaviour
         //Question myQuestion = GetQuestion(0);
     }
 
-    public void Confirm()
-    {
-        Debug.Log(CheckSolution());
-    }
-
     public bool CheckSolution()
     {
-        int counter = 0;
+        counter = 0; // reset the counter to zero at the beginning of the method
+
         foreach (QuizTarget target in quizTargets)
         {
             if (target.assignedMolecule != MoleculeType.None)
             {
-                // Debug.Log("A");
                 if (correctAnswers.Contains(target.assignedMolecule))
                 {
-                    // Debug.Log("B");
                     counter++;
                 }
                 else
                 {
-                    // Debug.Log("C");
                     return false;
                 }
             }
         }
-        if (counter == 4)
+
+        return counter == correctAnswers.Count;
+    }
+
+    public void Confirm()
+    {
+        Debug.Log(CheckSolution());
+        ResetCorrectQuestion();
+        counter = 0;
+
+    }
+
+    public void ResetCorrectQuestion()
+    {
+        if (CheckSolution())
         {
             scoreText.text = "1/1";
         }
         else
         {
             scoreText.text = "0/1";
-        }
 
-        return counter == correctAnswers.Count;
+        }
     }
 
 
