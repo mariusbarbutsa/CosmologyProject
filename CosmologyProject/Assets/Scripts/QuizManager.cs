@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class QuizManager : MonoBehaviour
@@ -10,10 +11,12 @@ public class QuizManager : MonoBehaviour
 
 
     public Question[] questions;
+    public TextMeshProUGUI scoreText;
     private float startTime;
     private float endTime;
     private bool isCounting = false;
     private float elapsedTime = 0.0f;
+
 
     public void Update()
     {
@@ -33,21 +36,28 @@ public class QuizManager : MonoBehaviour
         {
             if (target.assignedMolecule != MoleculeType.None)
             {
-                Debug.Log("A");
+                // Debug.Log("A");
                 if (correctAnswers.Contains(target.assignedMolecule))
                 {
-                    Debug.Log("B");
+                    // Debug.Log("B");
                     counter++;
                 }
                 else
                 {
-                    Debug.Log("C");
+                    // Debug.Log("C");
                     return false;
                 }
             }
         }
+        if (counter == 4)
+        {
+            scoreText.text = "1/1";
+        }
+        else
+        {
+            scoreText.text = "0/1";
+        }
 
-        Debug.Log("D");
         return counter == correctAnswers.Count;
     }
 
