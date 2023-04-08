@@ -15,12 +15,19 @@ public class TapOnBullet : MonoBehaviour, IPointerClickHandler
     public ElipseScript elipseScript;
     public float duration;
     public AnimationCurve animationCurve;
+    public AudioClip snapSound;
+    private AudioSource audioSource;
+    public AudioManager audioManager;
 
 
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+        audioManager.PlaySFX("ChangeBulletSound");
         GameManager.Instance.ChangeBullet(bulletTag);
         elipseScript.StartCoroutine(elipseScript.RotateCircleOverTime(duration, animationCurve));
 

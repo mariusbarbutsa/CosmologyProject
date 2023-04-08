@@ -13,6 +13,9 @@ public class Molecule : MonoBehaviour
     private TouchTest touchInput;
     private QuizTarget myTarget;
     public Button buttonToCheck;
+    public AudioClip snapSound;
+    private AudioSource audioSource;
+    public AudioManager audioManager;
 
 
     void Awake()
@@ -22,6 +25,7 @@ public class Molecule : MonoBehaviour
 
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         originalPosition = transform.position;
         buttonToCheck.onClick.AddListener(ResetPosition);
     }
@@ -31,7 +35,6 @@ public class Molecule : MonoBehaviour
         transform.position = originalPosition;
         //Debug.Log("original position 02: " + originalPosition);
     }
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -49,6 +52,7 @@ public class Molecule : MonoBehaviour
                         isSnapping = true;
                         transform.position = other.transform.position;
                         touchInput.isTouching = false;
+                        audioManager.PlaySFX("ColliderSound");
                     }
                 }
             }
