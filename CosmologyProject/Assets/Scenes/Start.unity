@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: 3
-  transformList: {fileID: 777164905}
+  infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 39946960}
   rotatingCircle: {fileID: 1049875459}
   elipseScript: {fileID: 1049875461}
@@ -1752,7 +1752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: 1
-  transformList: {fileID: 777164905}
+  infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 58667855}
   rotatingCircle: {fileID: 1049875459}
   elipseScript: {fileID: 1049875461}
@@ -7243,7 +7243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: 0
-  transformList: {fileID: 777164905}
+  infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 245741830}
   rotatingCircle: {fileID: 1049875459}
   elipseScript: {fileID: 1049875461}
@@ -27417,6 +27417,7 @@ MonoBehaviour:
   displayedIntroText: {fileID: 1281530738}
   backButton: {fileID: 594747749}
   transformList: {fileID: 1279781575}
+  infoScreen: {fileID: 777164905}
 --- !u!4 &677566426
 Transform:
   m_ObjectHideFlags: 0
@@ -38754,6 +38755,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1049875461}
         m_TargetAssemblyTypeName: ElipseScript, Assembly-CSharp
         m_MethodName: ResetEllipsePosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 327193132}
+        m_TargetAssemblyTypeName: ChangeVisibility, Assembly-CSharp
+        m_MethodName: FadeOutContainer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53282,7 +53295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: 4
-  transformList: {fileID: 777164905}
+  infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 1374060429}
   rotatingCircle: {fileID: 1049875459}
   elipseScript: {fileID: 1049875461}
@@ -59894,7 +59907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: 2
-  transformList: {fileID: 777164905}
+  infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 1622018221}
   rotatingCircle: {fileID: 1049875459}
   elipseScript: {fileID: 1049875461}
