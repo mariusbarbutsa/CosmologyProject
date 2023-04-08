@@ -97,6 +97,4 @@ public class ChangeVisibility : MonoBehaviour
         container.alpha = 1f; // Just in case the lerp doesn't quite reach 1
     }
 
-
-
 }

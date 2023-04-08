@@ -5,11 +5,15 @@ using UnityEngine;
 public class ElipseScript : MonoBehaviour
 {
     public Transform activeBullets;
+    public float duration;
+    public AnimationCurve animationCurve;
+    private Quaternion originalRotation;
+
 
 
     void Start()
     {
-
+        originalRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -91,6 +95,54 @@ public class ElipseScript : MonoBehaviour
             rotatingCircle.transform.rotation = Quaternion.Euler(currentRotation);
         }
     } */
+
+    public IEnumerator RotateCircleOverTime(float duration, AnimationCurve animationCurve)
+    {
+        float timeElapsed = 0f;
+        Vector3 initialRotation = transform.rotation.eulerAngles;
+        Vector3 targetRotation = initialRotation;
+
+        if (GameManager.Instance.activeBullet == BulletList.SecondBullet)
+        {
+            targetRotation.z = 50f;
+        }
+        else if (GameManager.Instance.activeBullet == BulletList.ThirdBullet)
+        {
+            targetRotation.z = 70f;
+        }
+        else if (GameManager.Instance.activeBullet == BulletList.FourthBullet)
+        {
+            targetRotation.z = 90f;
+        }
+        else if (GameManager.Instance.activeBullet == BulletList.FifthBullet)
+        {
+            targetRotation.z = 110f;
+        }
+        else if (GameManager.Instance.activeBullet == BulletList.FirstBullet)
+        {
+            targetRotation.z = 30f;
+        }
+
+        while (timeElapsed < duration)
+        {
+            float t = timeElapsed / duration;
+            t = animationCurve.Evaluate(t);
+            Vector3 currentRotation = Vector3.Lerp(initialRotation, targetRotation, t);
+            transform.rotation = Quaternion.Euler(currentRotation);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = Quaternion.Euler(targetRotation);
+    }
+
+
+
+
+    public void ResetEllipsePosition()
+    {
+        transform.rotation = originalRotation;
+    }
 
 }
 

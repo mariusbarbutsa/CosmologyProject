@@ -1371,7 +1371,8 @@ MonoBehaviour:
   transformList: {fileID: 777164905}
   BulletAttached: {fileID: 39946960}
   rotatingCircle: {fileID: 1049875459}
-  duration: 0.5
+  elipseScript: {fileID: 1049875461}
+  duration: 0.8
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1754,7 +1755,8 @@ MonoBehaviour:
   transformList: {fileID: 777164905}
   BulletAttached: {fileID: 58667855}
   rotatingCircle: {fileID: 1049875459}
-  duration: 0.5
+  elipseScript: {fileID: 1049875461}
+  duration: 0.8
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -7244,7 +7246,8 @@ MonoBehaviour:
   transformList: {fileID: 777164905}
   BulletAttached: {fileID: 245741830}
   rotatingCircle: {fileID: 1049875459}
-  duration: 0.5
+  elipseScript: {fileID: 1049875461}
+  duration: 0.8
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -19087,6 +19090,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ClickSound
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1049875461}
+        m_TargetAssemblyTypeName: ElipseScript, Assembly-CSharp
+        m_MethodName: ResetEllipsePosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &577223505
@@ -38736,6 +38751,18 @@ MonoBehaviour:
           m_StringArgument: ClickSound
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1049875461}
+        m_TargetAssemblyTypeName: ElipseScript, Assembly-CSharp
+        m_MethodName: ResetEllipsePosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1035696639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39157,6 +39184,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeBullets: {fileID: 1049875460}
+  duration: 0.8
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1049875462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53233,7 +53285,8 @@ MonoBehaviour:
   transformList: {fileID: 777164905}
   BulletAttached: {fileID: 1374060429}
   rotatingCircle: {fileID: 1049875459}
-  duration: 0.5
+  elipseScript: {fileID: 1049875461}
+  duration: 0.8
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -59844,7 +59897,8 @@ MonoBehaviour:
   transformList: {fileID: 777164905}
   BulletAttached: {fileID: 1622018221}
   rotatingCircle: {fileID: 1049875459}
-  duration: 0.5
+  elipseScript: {fileID: 1049875461}
+  duration: 0.8
   animationCurve:
     serializedVersion: 2
     m_Curve:

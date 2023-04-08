@@ -21,6 +21,7 @@ public class ChangingUI : MonoBehaviour
     public GameObject displayedIntroText;
     public GameObject backButton;
     public Transform transformList;
+    public Transform infoScreen;
 
 
 
@@ -111,8 +112,19 @@ public class ChangingUI : MonoBehaviour
             transformList.GetChild(i).gameObject.SetActive(true);
         }
         backButton.SetActive(false);
+        ResetInfoScreens();
+    }
 
+    public void ResetInfoScreens()
+    {
+        for (int i = 0; i < infoScreen.childCount; i++)
+        {
+            for (int j = 0; j < infoScreen.GetChild(i).childCount; j++)
+            {
+                infoScreen.GetChild(i).GetChild(j).gameObject.SetActive(false);
+            }
 
+        }
     }
 
 }
