@@ -16,7 +16,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public AnimationCurve animationCurve;
     public RotateAround rotateAround;
     public GameObject displayedIntroText;
-    public CanvasGroup backButton;
+    public GameObject backButton;
     public float duration;
     public float xScale;
     public float yScale;
@@ -116,7 +116,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
             //SetActiveInfoScreen();
             //rotateAround.enabled = false;
             displayedIntroText.SetActive(false);
-            backButton.alpha = 1;
+            backButton.SetActive(true);
 
         }
         else if (CompareTag(GameManager.Instance.activePlanet.ToString()))

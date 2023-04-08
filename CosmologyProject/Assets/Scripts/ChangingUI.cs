@@ -19,7 +19,7 @@ public class ChangingUI : MonoBehaviour
     public GameObject mainMenuDisplay;
     public GameObject exploreDisplay;
     public GameObject displayedIntroText;
-    public CanvasGroup backButton;
+    public GameObject backButton;
     public Transform transformList;
 
 
@@ -99,16 +99,20 @@ public class ChangingUI : MonoBehaviour
     public void DisplayIntroText()
     {
         displayedIntroText.SetActive(true);
-        backButton.alpha = 1;
+        backButton.SetActive(false);
     }
 
     public void ResetExplore()
     {
         GameManager.Instance.ChangePlanet(PlanetTag.None);
+        GameManager.Instance.ChangeBullet(BulletList.FirstBullet);
         for (int i = 0; i < transformList.childCount; i++)
         {
             transformList.GetChild(i).gameObject.SetActive(true);
         }
+        backButton.SetActive(false);
+
+
     }
 
 }
