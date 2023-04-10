@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 
 public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
@@ -28,6 +28,7 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
     public Vector3 originalPosition;
     private Vector3 targetScale;
     private Vector3 targetPosition;
+    private Vector2 lastTouchPos;
 
 
 
@@ -48,6 +49,30 @@ public class TapOnPlanet : MonoBehaviour, IPointerClickHandler
             ResetSizesAndPosition();
             Debug.Log("maybe you would work now?!");
         }
+
+        /*// Check for touch input
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                // Save the starting touch position
+                lastTouchPos = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                // Calculate the difference in touch position
+                Vector2 deltaPos = touch.position - lastTouchPos;
+
+                // Rotate the object based on the touch movement
+                transform.Rotate(Vector3.up, -deltaPos.x * 0.5f, Space.World);
+                transform.Rotate(Vector3.right, deltaPos.y * 0.5f, Space.World);
+
+                // Save the new touch position
+                lastTouchPos = touch.position;
+            }
+        }*/
     }
 
     public void ResetSizesAndPosition()

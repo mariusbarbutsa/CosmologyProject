@@ -87,12 +87,22 @@ public class ChangingUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        mainMenu.gameObject.SetActive(true);
+        difficultyScene.gameObject.SetActive(false);
+        resultsScreen.gameObject.SetActive(false);
+        question1.gameObject.SetActive(false);
+        quizEasyScreen.gameObject.SetActive(false);
         mainMenuDisplay.gameObject.SetActive(true);
         exploreDisplay.gameObject.SetActive(false);
     }
 
     public void GoToExplore()
     {
+        mainMenu.gameObject.SetActive(false);
+        difficultyScene.gameObject.SetActive(false);
+        resultsScreen.gameObject.SetActive(false);
+        question1.gameObject.SetActive(false);
+        quizEasyScreen.gameObject.SetActive(false);
         mainMenuDisplay.gameObject.SetActive(false);
         exploreDisplay.gameObject.SetActive(true);
     }

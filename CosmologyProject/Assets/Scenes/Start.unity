@@ -1371,7 +1371,7 @@ MonoBehaviour:
   infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 39946960}
   rotatingCircle: {fileID: 1049875459}
-  elipseScript: {fileID: 1049875461}
+  ellipseScript: {fileID: 0}
   duration: 0.8
   animationCurve:
     serializedVersion: 2
@@ -1757,7 +1757,7 @@ MonoBehaviour:
   infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 58667855}
   rotatingCircle: {fileID: 1049875459}
-  elipseScript: {fileID: 1049875461}
+  ellipseScript: {fileID: 0}
   duration: 0.8
   animationCurve:
     serializedVersion: 2
@@ -7250,7 +7250,7 @@ MonoBehaviour:
   infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 245741830}
   rotatingCircle: {fileID: 1049875459}
-  elipseScript: {fileID: 1049875461}
+  ellipseScript: {fileID: 0}
   duration: 0.8
   animationCurve:
     serializedVersion: 2
@@ -7611,7 +7611,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.59
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15536,7 +15536,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.75
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -25869,6 +25869,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1 &637582622
 GameObject:
   m_ObjectHideFlags: 0
@@ -37991,6 +37992,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1 &1014732751
 GameObject:
   m_ObjectHideFlags: 0
@@ -38383,6 +38385,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1 &1024166943
 GameObject:
   m_ObjectHideFlags: 0
@@ -40776,6 +40779,18 @@ MonoBehaviour:
           m_StringArgument: ClickSound
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 677566425}
+        m_TargetAssemblyTypeName: ChangingUI, Assembly-CSharp
+        m_MethodName: GoToExplore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1133031112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42889,6 +42904,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1001 &1178460634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43469,6 +43485,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1 &1184849580
 GameObject:
   m_ObjectHideFlags: 0
@@ -49676,6 +49693,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1001 &1259848481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52080,7 +52098,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -53302,7 +53320,7 @@ MonoBehaviour:
   infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 1374060429}
   rotatingCircle: {fileID: 1049875459}
-  elipseScript: {fileID: 1049875461}
+  ellipseScript: {fileID: 0}
   duration: 0.8
   animationCurve:
     serializedVersion: 2
@@ -59916,7 +59934,7 @@ MonoBehaviour:
   infoScreen: {fileID: 777164905}
   BulletAttached: {fileID: 1622018221}
   rotatingCircle: {fileID: 1049875459}
-  elipseScript: {fileID: 1049875461}
+  ellipseScript: {fileID: 0}
   duration: 0.8
   animationCurve:
     serializedVersion: 2
@@ -65122,6 +65140,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1 &1801052937
 GameObject:
   m_ObjectHideFlags: 0
@@ -66030,6 +66049,7 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   buttonToCheck: {fileID: 197269772}
   snapSound: {fileID: 8300000, guid: bf01f93c8e9c74c8fa106e7db76d41a8, type: 3}
+  audioManager: {fileID: 999212200}
 --- !u!1001 &1836727232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74256,6 +74276,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ClickSound
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 677566425}
+        m_TargetAssemblyTypeName: ChangingUI, Assembly-CSharp
+        m_MethodName: GoToExplore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2093436063

@@ -12,7 +12,7 @@ public class TapOnBullet : MonoBehaviour, IPointerClickHandler
     public Transform infoScreen;
     public GameObject BulletAttached;
     public GameObject rotatingCircle;
-    public ElipseScript elipseScript;
+    public ElipseScript ellipseScript;
     public float duration;
     public AnimationCurve animationCurve;
     public AudioClip snapSound;
@@ -29,7 +29,7 @@ public class TapOnBullet : MonoBehaviour, IPointerClickHandler
     {
         audioManager.PlaySFX("ChangeBulletSound");
         GameManager.Instance.ChangeBullet(bulletTag);
-        elipseScript.StartCoroutine(elipseScript.RotateCircleOverTime(duration, animationCurve));
+        ellipseScript.StartCoroutine(ellipseScript.RotateCircleOverTime(duration, animationCurve));
 
         for (int i = 0; i < infoScreen.childCount; i++)
         {
